@@ -18,7 +18,7 @@ export const users = [
     name: 'Felicja Zając',
     attendance: '81%',
     average: '2.8',
-  },  
+  },
   {
     name: 'Kasia Skowronek',
     attendance: '77%',
