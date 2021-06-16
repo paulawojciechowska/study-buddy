@@ -6,7 +6,9 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyles';
 import { theme } from 'assets/styles/theme';
 import { Wrapper } from './Root.styles';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 const mockAPI = (success) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -62,20 +64,18 @@ const Root = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/add-user">Add user</Link>
-          </nav>
-          <Switch>
-            <Route path="/" exact>
-              <UsersList deleteUser={deleteUser} users={users} isLoading={isLoading} />
-            </Route>
-            <Route path="/add-user">
-              <Form formValues={formValues} handleInputChange={handleInputChange} addNewUser={addNewUser} />
-            </Route>
-          </Switch>
-        </Wrapper>
+        <MainTemplate>
+          <Wrapper>
+            <Switch>
+              <Route path="/" exact>
+                <UsersList deleteUser={deleteUser} users={users} isLoading={isLoading} />
+              </Route>
+              <Route path="/add-user">
+                <Form formValues={formValues} handleInputChange={handleInputChange} addNewUser={addNewUser} />
+              </Route>
+            </Switch>
+          </Wrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );
