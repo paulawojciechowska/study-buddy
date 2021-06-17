@@ -1,27 +1,26 @@
 import React from 'react';
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
-import { Wrapper, StyledList, StyledTitle } from './UsersList.styles';
-// import FormField from 'components/molecules/FormField/FormField';
-// import { Button } from 'components/atoms/Button/Button';
-// import PropTypes from 'prop-types';
+import { StyledList } from './UsersList.styles';
+import { Title } from 'components/atoms/Title/Title';
+import { UserShape } from 'types';
+import PropTypes from 'prop-types';
 
-const UsersList = ({ users, deleteUser, isLoading }) => {
+const UsersList = ({ users, isLoading }) => {
   return (
     <>
-      <Wrapper>
-        <StyledTitle>{isLoading ? 'Loading...' : 'Users List'}</StyledTitle>
-        <StyledList>
-          {users.map((userData) => (
-            <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData} />
-          ))}
-        </StyledList>
-      </Wrapper>
+      <Title>{isLoading ? 'Loading...' : 'Users List'}</Title>
+      <StyledList>
+        {users.map((userData) => (
+          <UsersListItem key={userData.name} userData={userData} />
+        ))}
+      </StyledList>
     </>
   );
 };
 
-// UsersList.propTypes = {
-
-// }
+UsersList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
+  deleteUser: PropTypes.func,
+};
 
 export default UsersList;
