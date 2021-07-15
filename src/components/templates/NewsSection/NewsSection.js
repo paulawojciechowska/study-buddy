@@ -3,6 +3,19 @@ import { Wrapper, NewsSeactionHeader, ArticleWrapper, TitleWrapper, ContentWrapp
 import { Button } from 'components/atoms/Button/Button';
 import axios from 'axios';
 
+export const query = `
+{
+  allArticles {
+    id
+    title
+    category
+    content
+    image {
+      url
+    }
+  }
+}`;
+
 const NewsSection = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState('');
@@ -11,18 +24,7 @@ const NewsSection = () => {
       .post(
         'https://graphql.datocms.com/',
         {
-          query: `
-      {
-        allArticles {
-          id
-          title
-          category
-          content
-          image {
-            url
-          }
-        }
-      }`,
+          query,
         },
         {
           headers: {
@@ -41,8 +43,8 @@ const NewsSection = () => {
     <Wrapper>
       <NewsSeactionHeader>University news feed</NewsSeactionHeader>
       {articles.length > 0 && !error ? (
-        articles.map(({ title, category, content, image = null }) => (
-          <ArticleWrapper key={title}>
+        articles.map(({ id, title, category, content, image = null }) => (
+          <ArticleWrapper key={id}>
             <TitleWrapper>
               <h3>{title}</h3>
               <p>{category}</p>
