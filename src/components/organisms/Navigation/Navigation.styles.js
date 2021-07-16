@@ -9,6 +9,8 @@ export const Wrapper = styled.nav`
   border-right: 4px solid ${({ theme }) => theme.colors.lightPurple};
   justify-content: flex-start;
   padding: 30px 0;
+  grid-row: 1 / 3;
+  grid-column: 1 / 1;
 `;
 export const Logo = styled.div`
   width: 100%;
