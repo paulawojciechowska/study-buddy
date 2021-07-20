@@ -11,10 +11,10 @@ export const SearchBarWrapper = styled.div`
   padding: 0 40px;
 
   ${Input} {
-    font-size: ${({theme}) => theme.fontSize.xl};
+    font-size: ${({ theme }) => theme.fontSize.xl};
     width: 100%;
     max-width: 350px;
-    border: 2px solid ${({theme}) => theme.colors.lightPurple};
+    border: 2px solid ${({ theme }) => theme.colors.lightPurple};
   }
 `;
 
@@ -24,5 +24,37 @@ export const StatusInfo = styled.div`
   margin-right: 40px;
   p {
     margin: 5px;
+  }
+`;
+export const SearchWrapper = styled.div`
+  position: relative;
+`;
+export const SearchResults = styled.ul`
+  z-index: 1000;
+  max-height: 500px;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  background-color: ${({ theme }) => theme.colors.white};
+  width: 100%;
+  max-width: 350px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  li {
+    color: ${({ theme }) => theme.colors.darkGrey};
+    font-weight: bold;
+    list-style: none;
+    padding: 20px 5px;
+  }
+  li:hover,
+  li:focus {
+    background-color: ${({ theme }) => theme.colors.lightGrey};
+  }
+  li:not(:last-child) {
+    border-bottom: 3px solid ${({ theme }) => theme.colors.lightPurple};
   }
 `;
