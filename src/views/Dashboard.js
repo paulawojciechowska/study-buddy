@@ -1,14 +1,33 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useStudents } from 'hooks/useStudents';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
-import { UsersContext } from 'providers/UsersProvider';
+import { useParams, Redirect } from 'react-router-dom';
+import { StyledTitle, PanelWrapper, DashboardWrapper, StyledButton, StyledLink } from './Dashboard.styles';
 
 const Dashboard = () => {
-  const { users, isLoading } = useContext(UsersContext);
+  const { groups } = useStudents();
+  const { id } = useParams();
+
+  if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0]}`} />;
   return (
-    <ViewWrapper>
-      <UsersList users={users} isLoading={isLoading} />
-    </ViewWrapper>
+    <DashboardWrapper>
+      <PanelWrapper>
+        <StyledTitle>Group {id || groups[0]}</StyledTitle>
+        <nav>
+          {groups.map((group) => (
+            <StyledButton>
+              <StyledLink key={group} to={`/group/${group}`}>
+                {group}
+              </StyledLink>
+            </StyledButton>
+          ))}
+        </nav>
+      </PanelWrapper>
+      <ViewWrapper>
+        <UsersList />
+      </ViewWrapper>
+    </DashboardWrapper>
   );
 };
 

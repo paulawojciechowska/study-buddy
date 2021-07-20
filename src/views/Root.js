@@ -6,8 +6,7 @@ import { GlobalStyle } from 'assets/styles/GlobalStyles';
 import { theme } from 'assets/styles/theme';
 import { Wrapper } from './Root.styles';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import UsersProvider from 'providers/UsersProvider';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 const Root = () => {
   return (
@@ -15,18 +14,19 @@ const Root = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <MainTemplate>
-          <UsersProvider>
-            <Wrapper>
-              <Switch>
-                <Route path="/" exact>
-                  <Dashboard />
-                </Route>
-                <Route path="/add-user">
-                  <AddUser />
-                </Route>
-              </Switch>
-            </Wrapper>
-          </UsersProvider>
+          <Wrapper>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/group" />
+              </Route>
+              <Route path="/add-user">
+                <AddUser />
+              </Route>
+              <Route path="/group/:id?">
+                <Dashboard />
+              </Route>
+            </Switch>
+          </Wrapper>
         </MainTemplate>
       </ThemeProvider>
     </Router>
