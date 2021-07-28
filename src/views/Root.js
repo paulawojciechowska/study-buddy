@@ -1,6 +1,5 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import AddUser from './AddUser';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyles';
 import { theme } from 'assets/styles/theme';
@@ -18,9 +17,6 @@ const Root = () => {
             <Switch>
               <Route exact path="/">
                 <Redirect to="/group" />
-              </Route>
-              <Route path="/add-user">
-                <AddUser />
               </Route>
               <Route path="/group/:id?">
                 <Dashboard />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStudents } from 'hooks/useStudents';
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList } from './UsersList.styles';
@@ -8,8 +8,16 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 const UsersList = () => {
+  const [students, setStudents] = useState([]);
   const { id } = useParams();
-  const { students } = useStudents({ groupId: id });
+  const { getStudents } = useStudents();
+  
+  useEffect(() => {
+    (async () => {
+      const students = await getStudents(id);
+      setStudents(students);
+    })();
+  }, [getStudents, id]);
   return (
     <>
       {/* <Title>Students List</Title> */}
