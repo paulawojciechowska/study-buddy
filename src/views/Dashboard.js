@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStudents } from 'hooks/useStudents';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
@@ -6,8 +6,16 @@ import { useParams, Redirect } from 'react-router-dom';
 import { StyledTitle, PanelWrapper, DashboardWrapper, StyledButton, StyledLink } from './Dashboard.styles';
 
 const Dashboard = () => {
-  const { groups } = useStudents();
+  const [groups, setGroups] = useState([]);
   const { id } = useParams();
+  const { getGroups } = useStudents();
+
+  useEffect(() => {
+    (async () => {
+      const groups = await getGroups();
+      setGroups(groups);
+    })();
+  }, [getGroups]);
 
   if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0]}`} />;
   return (
