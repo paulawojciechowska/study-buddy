@@ -27,7 +27,7 @@ export const AverageWrapper = styled.div`
   background-color: ${({ theme, score }) => {
     if (score > 4) return theme.colors.success;
     if (score > 3) return theme.colors.warning;
-    if (score > 2) return theme.colors.error;
+    if (score >= 2) return theme.colors.error;
     return theme.colors.grey;
   }};
   color: white;
