@@ -5,10 +5,10 @@ import { UserShape } from 'types';
 import { Wrapper, AverageWrapper, InfoWrapper } from './UsersListItem.styles';
 import { UsersContext } from 'providers/UsersProvider';
 
-const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => {
+const UsersListItem = ({ userData: { average, name, attendance = '0%' }, ...props }) => {
   const { deleteUser } = useContext(UsersContext);
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <AverageWrapper score={average}>{average}</AverageWrapper>
       <InfoWrapper>
         <p>

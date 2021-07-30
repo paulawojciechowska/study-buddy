@@ -7,23 +7,23 @@ import { UserShape } from 'types';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
-const UsersList = () => {
+const UsersList = ({handleOpenStudentDetail}) => {
   const [students, setStudents] = useState([]);
   const { id } = useParams();
-  const { getStudents } = useStudents();
+  const { getStudentsByGroup } = useStudents();
   
   useEffect(() => {
     (async () => {
-      const students = await getStudents(id);
+      const students = await getStudentsByGroup(id);
       setStudents(students);
     })();
-  }, [getStudents, id]);
+  }, [getStudentsByGroup, id]);
   return (
     <>
       {/* <Title>Students List</Title> */}
       <StyledList>
         {students.map((userData) => (
-          <UsersListItem key={userData.name} userData={userData} />
+          <UsersListItem onClick={() => handleOpenStudentDetail(userData.id)} key={userData.name} userData={userData} />
         ))}
       </StyledList>
     </>
