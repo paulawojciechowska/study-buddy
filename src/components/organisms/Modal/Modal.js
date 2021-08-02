@@ -18,7 +18,7 @@ const Modal = ({ handleCloseModal, children }) => {
   return ReactDOM.createPortal(
     <ModalWrapper>
       {children}
-      <Button onClick={handleCloseModal}>Close Modals</Button>
+      <Button isBig onClick={handleCloseModal}>Save</Button>
     </ModalWrapper>,
     modalNode
   );

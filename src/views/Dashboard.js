@@ -5,15 +5,15 @@ import UsersList from 'components/organisms/UsersList/UsersList';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import { useParams, Redirect } from 'react-router-dom';
 import { StyledTitle, PanelWrapper, DashboardWrapper, StyledButton, StyledLink } from './Dashboard.styles';
-import { Title } from 'components/atoms/Title/Title';
-import { AverageWrapper } from 'components/molecules/UsersListItem/UsersListItem.styles';
+import Modal from 'components/organisms/Modal/Modal';
+import StudentsDetails from 'components/molecules/StudentDetails/StudentDetails';
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
   const { id } = useParams();
   const { getGroups, getStudentById } = useStudents();
-  const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
+  const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
   useEffect(() => {
     (async () => {
@@ -46,9 +46,7 @@ const Dashboard = () => {
         <UsersList handleOpenStudentDetail={handleOpenStudentDetail} />
         {isOpen ? (
           <Modal handleCloseModal={handleCloseModal}>
-            <Title>{currentUser.name} | Group {currentUser.group}</Title>
-            <p>{currentUser.attendance}</p>
-            <AverageWrapper score={currentUser.average}>{currentUser.average}</AverageWrapper>
+            <StudentsDetails student={currentUser} />
           </Modal>
         ) : null}
       </ViewWrapper>

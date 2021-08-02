@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import { UserShape } from 'types';
-import { Wrapper, AverageWrapper, InfoWrapper } from './UsersListItem.styles';
+import { Wrapper, InfoWrapper } from './UsersListItem.styles';
+import { AverageWrapper } from 'components/atoms/AverageWrapper/AverageWrapper';
 import { UsersContext } from 'providers/UsersProvider';
 
 const UsersListItem = ({ userData: { average, name, attendance = '0%' }, ...props }) => {

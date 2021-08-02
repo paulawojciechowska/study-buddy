@@ -7,11 +7,11 @@ import { UserShape } from 'types';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
-const UsersList = ({handleOpenStudentDetail}) => {
+const UsersList = ({ handleOpenStudentDetail }) => {
   const [students, setStudents] = useState([]);
   const { id } = useParams();
   const { getStudentsByGroup } = useStudents();
-  
+
   useEffect(() => {
     (async () => {
       const students = await getStudentsByGroup(id);
