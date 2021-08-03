@@ -12,7 +12,7 @@ const StudentsDetails = ({ student }) => {
       </HeaderWrapper>
       <ContentWrapper>
         <h3>Course:</h3>
-        <p>Economy and finances</p>
+        <p>{student.course}</p>
         <h3>Average grades:</h3>
         {student.grades.map((subject) => (
           <CourseWrapper>

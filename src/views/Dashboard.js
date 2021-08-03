@@ -15,28 +15,6 @@ const Dashboard = () => {
   const { getGroups, getStudentById } = useStudents();
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
-  const mockedStudent = {
-    id: '1',
-    name: 'Adam Romański',
-    attendance: '39%',
-    average: '2.3',
-    group: 'A',
-    grades: [
-      {
-        subject: 'Modern Economy',
-        average: '4.4',
-      },
-      {
-        subject: 'Trade and Logistis',
-        average: '3.7',
-      },
-      {
-        subject: 'Business Philosophy',
-        average: '2.8',
-      },
-    ],
-  };
-
   useEffect(() => {
     (async () => {
       const groups = await getGroups();
@@ -67,7 +45,8 @@ const Dashboard = () => {
       <ViewWrapper>
         <UsersList handleOpenStudentDetail={handleOpenStudentDetail} />
         <Modal isOpen={isOpen} handleCloseModal={handleCloseModal}>
-          <StudentsDetails student={mockedStudent} />
+          <StudentsDetails student={currentUser} />
+          {console.log(currentUser)}
         </Modal>
       </ViewWrapper>
     </DashboardWrapper>
