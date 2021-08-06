@@ -18,6 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     (async () => {
       const groups = await getGroups();
+      // console.log(groups);
       setGroups(groups);
     })();
   }, [getGroups]);
@@ -27,16 +28,16 @@ const Dashboard = () => {
     setCurrentUser(student);
     handleOpenModal();
   };
-  if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0]}`} />;
+  if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0].id}`} />;
   return (
     <DashboardWrapper>
       <PanelWrapper>
-        <StyledTitle>Group {id || groups[0]}</StyledTitle>
+        <StyledTitle>Group {id}</StyledTitle>
         <nav>
-          {groups.map((group) => (
+          {groups.map(({ id }) => (
             <StyledButton>
-              <StyledLink key={group} to={`/group/${group}`}>
-                {group}
+              <StyledLink key={id} to={`/group/${id}`}>
+                {id}
               </StyledLink>
             </StyledButton>
           ))}

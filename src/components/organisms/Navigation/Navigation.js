@@ -13,7 +13,9 @@ const Navigation = () => (
     <StyledLink exact to="/group">
       Dashboard
     </StyledLink>
-    <StyledLink exact to="add-user">Add user</StyledLink>
+    <StyledLink as="a" onClick={() => localStorage.removeItem('token')}>
+      Logout
+    </StyledLink>
   </Wrapper>
 );
 
