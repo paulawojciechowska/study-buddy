@@ -6,6 +6,7 @@ export const Wrapper = styled.li`
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  cursor: pointer;
   &:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -14,25 +15,6 @@ export const Wrapper = styled.li`
     height: 1px;
     background-color: lightgrey;
   }
-`;
-
-export const AverageWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  width: 45px;
-  height: 45px;
-  border-radius: 30px;
-  background-color: ${({ theme, score }) => {
-    if (score > 4) return theme.colors.success;
-    if (score > 3) return theme.colors.warning;
-    if (score > 2) return theme.colors.error;
-    return theme.colors.grey;
-  }};
-  color: white;
-  font-weight: bold;
-  font-size: ${({ theme }) => theme.fontSize.l};
 `;
 
 export const InfoWrapper = styled.div`

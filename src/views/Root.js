@@ -1,32 +1,52 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'assets/styles/GlobalStyles';
-import { theme } from 'assets/styles/theme';
-import { Wrapper } from './Root.styles';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import FormField from 'components/molecules/FormField/FormField';
+import { Button } from 'components/atoms/Button/Button';
+import { Wrapper } from './Root.styles';
+import { useForm } from 'react-hook-form';
+import { useAuth } from 'hooks/useAuth';
 
-const Root = () => {
+const AuthenticatedApp = () => {
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <MainTemplate>
-          <Wrapper>
-            <Switch>
-              <Route exact path="/">
-                <Redirect to="/group" />
-              </Route>
-              <Route path="/group/:id?">
-                <Dashboard />
-              </Route>
-            </Switch>
-          </Wrapper>
-        </MainTemplate>
-      </ThemeProvider>
-    </Router>
+    <MainTemplate>
+      <Wrapper>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/group" />
+          </Route>
+          <Route path="/group/:id?">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </Wrapper>
+    </MainTemplate>
   );
+};
+
+const UnauthenticatedApp = () => {
+  const auth = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <form
+      onSubmit={handleSubmit(auth.signIn)}
+      style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+    >
+      <FormField label="login" name="login" id="login" {...register('login')} />
+      <FormField label="password" name="password" id="password" type="password" {...register('password')} />
+      <Button type="submit">Sign In</Button>
+    </form>
+  );
+};
+const Root = () => {
+  const auth = useAuth();
+  return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
 
 export default Root;

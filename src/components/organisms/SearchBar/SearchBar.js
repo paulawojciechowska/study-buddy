@@ -14,7 +14,7 @@ const SearchBar = () => {
     setMatchingStudents(students);
   }, 500);
 
-  const { isOpen, getToggleButtonProps, getLabelProps, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
+  const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
     items: matchingStudents,
     onInputValueChange: getMatchingStudents,
   });
