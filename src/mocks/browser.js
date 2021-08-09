@@ -14,7 +14,7 @@ const seed = () => {
   db.group.create({
     id: 'C',
   });
-  
+
   db.teacher.create();
 
   db.note.create();
