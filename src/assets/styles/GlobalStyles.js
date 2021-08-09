@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Raleway', sans-serif;
-        /* overflow-y: hidden; */
+        overflow-y: hidden;
     }
     
     a, button {
