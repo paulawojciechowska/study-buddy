@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { ThemeProvider } from 'styled-components';
-import { theme } from 'assets/styles/theme';
+import AppProviders from 'providers/AppProviders';
 
 const AllTheProviders = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <AppProviders>{children}</AppProviders>;
 };
 
 const customRender = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
