@@ -5,6 +5,7 @@ import Note from 'components/molecules/Note/Note';
 import { Button } from 'components/atoms/Button/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { addNote } from 'store';
+import { useForm } from 'react-hook-form';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
   padding: 30px;
 `;
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.form`
   padding: 20px;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 25px;
@@ -41,16 +42,23 @@ const NotesWrapper = styled.div`
 const Notes = () => {
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleAddNote = () => {
-    dispatch(addNote({ title: `New Note ${Math.floor(Math.random() * 10)}`, content: 'Lorem ipsum dolor sit amet' }));
+  const handleAddNote = ({ title, content }) => {
+    dispatch(addNote({ title, content }));
   };
   return (
     <Wrapper>
-      <FormWrapper>
-        <StyledFormField label="Title" name="title" id="title" />
-        <StyledFormField isTextarea label="Content" name="content" id="content" />
-        <Button onClick={handleAddNote}>Add</Button>
+      <FormWrapper onSubmit={handleSubmit(handleAddNote)}>
+        <StyledFormField {...register('title', { required: true })} label="Title" name="title" id="title" />
+        <StyledFormField {...register('content', { required: true })} isTextarea label="Content" name="content" id="content" />
+        {errors.title && <span>Title is required</span>}
+        {errors.content && <span>Content is required</span>}
+        <Button type="submit">Add</Button>
       </FormWrapper>
       <NotesWrapper>
         {notes.length ? (
