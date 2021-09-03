@@ -47,7 +47,6 @@ const Dashboard = () => {
         <UsersList handleOpenStudentDetail={handleOpenStudentDetail} />
         <Modal isOpen={isOpen} handleCloseModal={handleCloseModal}>
           <StudentsDetails student={currentUser} />
-          {console.log(currentUser)}
         </Modal>
       </ViewWrapper>
     </DashboardWrapper>
