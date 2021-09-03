@@ -1,0 +1,282 @@
+[33mcommit e1424f139e8901af4697a4832afe7e5aee6e6328[m[33m ([m[1;36mHEAD -> [m[1;32mcypress[m[33m, [m[1;31morigin/cypress[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Fri Sep 3 18:06:17 2021 +0200
+
+    added cypress, added tests for authorization and notes view
+
+[33mcommit c28a586a2667c3ef773a629c6a37ef0a1abbeb8a[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 47fa078 ae3068e
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Fri Sep 3 16:27:41 2021 +0200
+
+    Merge pull request #10 from paulawojciechowska/redux-toolkit-query
+    
+    merge of redux toolkit query
+
+[33mcommit ae3068e653fc4b490c3bde2f0b5f5b6900839bd9[m[33m ([m[1;31morigin/redux-toolkit-query[m[33m, [m[1;32mredux-toolkit-query[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Thu Aug 26 13:07:43 2021 +0200
+
+    moved NotesWidget styles to separate file
+
+[33mcommit 56632ba8804451c19d72e0aed790a18019cb6580[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Thu Aug 26 13:05:25 2021 +0200
+
+    added removeNote function
+
+[33mcommit 7e14f32f7bbcaa852fd903e4281813ef179b9c9d[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sun Aug 15 14:27:17 2021 +0200
+
+    added redux toolkit
+
+[33mcommit ba2efca63e12302b6eb264dfe45a42abafaec210[m[33m ([m[1;31morigin/redux[m[33m, [m[1;32mredux[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sun Aug 15 13:14:19 2021 +0200
+
+    moved styled to separate files, added add note form values reset
+
+[33mcommit f69b4d496bb913790b313f7e84fce7c09c55417b[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sun Aug 15 13:00:31 2021 +0200
+
+    set up add note form
+
+[33mcommit fa7aec2328a0db4459f775df2dfadf27ae54f8c8[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sun Aug 15 03:06:27 2021 +0200
+
+    Added notes view, styled notes view and notes widget, added redux
+
+[33mcommit d101c75726cfd551df85b276c49cc9b505b01ec4[m[33m ([m[1;31morigin/integration-tests[m[33m, [m[1;32mintegration-tests[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sat Aug 14 15:49:48 2021 +0200
+
+    added test for Root.js component
+
+[33mcommit 47fa07823bdce511dbbda8b38ecab4b1b9bde732[m[33m ([m[1;32mmain[m[33m)[m
+Merge: c978aa7 f17ca24
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Mon Aug 9 22:45:43 2021 +0200
+
+    Merge pull request #9 from paulawojciechowska/errors
+    
+    Added ErrorMessage component and useError hook
+
+[33mcommit f17ca24ce0509facb3b00f45d4972653ba6a5910[m[33m ([m[1;31morigin/errors[m[33m, [m[1;32merrors[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Aug 9 22:43:53 2021 +0200
+
+    Added ErrorMessage hook and component
+
+[33mcommit c978aa791a8a0e12319d42688a84f7675a9e9875[m
+Merge: 58e0608 22b1252
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Mon Aug 9 12:37:20 2021 +0200
+
+    Merge pull request #8 from paulawojciechowska/user-authorization
+    
+    added modal component, mock data and user authorization
+
+[33mcommit 22b1252e839d04d12540480da1ac870074425687[m[33m ([m[1;31morigin/user-authorization[m[33m, [m[1;32muser-authorization[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Aug 9 12:12:06 2021 +0200
+
+    Created useAuth hook to handle login, axios interceptors and made cleanup
+
+[33mcommit 1c0b01726a3d73ab2b24670e469dae41fc242257[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Fri Aug 6 18:23:51 2021 +0200
+
+    basic version of user authorization
+
+[33mcommit de697715e900ec0d8a38207ad8cd10198777fb49[m[33m ([m[1;31morigin/msw-database[m[33m, [m[1;32mmsw-database[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Tue Aug 3 12:46:12 2021 +0200
+
+    added msw database
+
+[33mcommit f8d5f10d65aa25ec2b7ec83e8b21dc911bdad9d0[m[33m ([m[1;31morigin/modal[m[33m, [m[1;32mmodal[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Aug 2 15:36:41 2021 +0200
+
+    added react-modal
+
+[33mcommit 1c85fb6dc0fec86e482cf31c746b963aa06e884f[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Aug 2 15:07:07 2021 +0200
+
+    styled modal element, moved AverageWrapper to separate component
+
+[33mcommit c08c0302c4fa350b9b9217bed75f1c810e742493[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Fri Jul 30 16:49:33 2021 +0200
+
+    added modal component
+
+[33mcommit ce4933d8b79b0d69ce7cbd1c2c62398c21d1dc2c[m[33m ([m[1;31morigin/storybook[m[33m, [m[1;32mstorybook[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Thu Jul 29 13:13:37 2021 +0200
+
+    added storybook, stories for Button, FormField components
+
+[33mcommit 58e0608d9f361a66b148ff25c08e809e8d8b4c65[m
+Merge: dc3941b 5751c92
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Wed Jul 28 14:54:58 2021 +0200
+
+    Merge pull request #7 from paulawojciechowska/downshift-search-bar
+    
+    Created searchBar
+
+[33mcommit 5751c92af5886afef245e36e44d8be5cf44c6e61[m[33m ([m[1;31morigin/downshift-search-bar[m[33m, [m[1;32mdownshift-search-bar[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Wed Jul 28 14:51:58 2021 +0200
+
+    applied downshift to searchbar, added searchbar test
+
+[33mcommit dc3941b379a11b8042cc4d717ceda62808667ddf[m
+Merge: 15365f8 afe5a62
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Wed Jul 21 00:17:04 2021 +0200
+
+    Merge pull request #6 from paulawojciechowska/mocking-api-msw
+    
+    added msw mock api
+
+[33mcommit afe5a62375e2750e1e3fb56042cbd3dcfaf3460f[m[33m ([m[1;31morigin/mocking-api-msw[m[33m, [m[1;32mmocking-api-msw[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Wed Jul 21 00:15:41 2021 +0200
+
+    added msw mock api, updated searchbar
+
+[33mcommit 15365f83e4e64d89d9bb96bc2e75c49d527a6e48[m
+Merge: 36c6ecd 2356b64
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Fri Jul 16 11:55:15 2021 +0200
+
+    Merge pull request #5 from paulawojciechowska/searchbar-news-section
+    
+    added searchbar and news section
+
+[33mcommit 2356b64218c0fb6035fa7eba0ea848433fab67f2[m[33m ([m[1;31morigin/searchbar-news-section[m[33m, [m[1;32msearchbar-news-section[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Fri Jul 16 00:30:26 2021 +0200
+
+    added test for NewsSection
+
+[33mcommit dd6d75fa11d3f93d7b79187a83ce94a461590043[m
+Merge: d5f5754 5665015
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Thu Jul 15 16:56:13 2021 +0200
+
+    Merge branch 'testing' into searchbar-news-section
+
+[33mcommit d5f5754a6039bf7c4f80c691288863aa78854ffa[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Thu Jul 15 16:54:57 2021 +0200
+
+    added DatoCMS to NewsSection
+
+[33mcommit 36c6ecd37f685e603f9c931d0228aaf7ebd9606c[m
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Mon Jul 12 23:05:43 2021 +0200
+
+    Update README.md
+
+[33mcommit f4d7acc204d1ba263d8ca903a7304a9ef34ebef4[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Jul 12 18:19:20 2021 +0200
+
+    created SearchBar and NewsSection components
+
+[33mcommit 2a7ea854a89e5edd6b136fe31b2ab6366ad62db8[m[33m ([m[1;32mhooks[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Jul 12 13:23:34 2021 +0200
+
+    created hook useForm for AddUser component
+
+[33mcommit 56650158dfc8074e3529effa270479c65cf1b6e7[m[33m ([m[1;31morigin/testing[m[33m, [m[1;32mtesting[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sat Jul 10 22:53:56 2021 +0200
+
+    added tests for FormField and AddUser
+
+[33mcommit f5051b07c2da951806552a83ff92200c8781db7e[m[33m ([m[1;31morigin/hooks[m[33m)[m
+Merge: f4ad391 4f17a43
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Fri Jun 18 00:45:44 2021 +0200
+
+    Merge pull request #4 from paulawojciechowska/add-context
+    
+    added react context
+
+[33mcommit 4f17a43ef59e0e9d98bb10acd5f8999de10a4a0f[m[33m ([m[1;31morigin/add-context[m[33m, [m[1;32madd-context[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Fri Jun 18 00:44:09 2021 +0200
+
+    added react context
+
+[33mcommit 6d69b316a047a9b485f2273dc634a78abc07dc7a[m[33m ([m[1;31morigin/forms-and-routing[m[33m, [m[1;32mforms-and-routing[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Wed Jun 16 23:15:45 2021 +0200
+
+    created sidebar
+
+[33mcommit 9b43774f034b355b9adbf63011e97ecad58a554e[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Wed Jun 16 21:13:50 2021 +0200
+
+    added add user feature
+
+[33mcommit f4ad3913d69d7500c4105804e6657b4682a9e8f1[m
+Merge: 79553f8 c100d95
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Mon Jun 14 22:14:22 2021 +0200
+
+    Merge pull request #3 from paulawojciechowska/components-lifecycle
+    
+    Added delete user function to UsersList component
+
+[33mcommit c100d95799075b8664d394e5c446d65b1700ef3e[m[33m ([m[1;31morigin/components-lifecycle[m[33m, [m[1;32mcomponents-lifecycle[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Mon Jun 14 22:12:45 2021 +0200
+
+    Added delete user function, minor name fixes
+
+[33mcommit 79553f84890c8890ccd5245268203b93a0bab836[m
+Merge: 559dce1 b5d3abb
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Sun Jun 13 21:28:12 2021 +0200
+
+    Merge pull request #2 from paulawojciechowska/users-list-component
+    
+    Created and styled UserList component
+
+[33mcommit b5d3abbce57fc41f541bb0b5799b6b10461ced79[m[33m ([m[1;31morigin/users-list-component[m[33m, [m[1;32musers-list-component[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Sun Jun 13 21:24:22 2021 +0200
+
+    created and styled UserList component
+
+[33mcommit 559dce15b234fa8db285da9c0e24a6fe14963d4b[m
+Merge: 9e02534 1ea18f8
+Author: paulawojciechowska <67111891+paulawojciechowska@users.noreply.github.com>
+Date:   Tue Jun 8 19:10:44 2021 +0200
+
+    Merge pull request #1 from paulawojciechowska/setup
+    
+    setup project
+
+[33mcommit 1ea18f834ed41b960bb1885bf9cf7bc86599a9f9[m[33m ([m[1;31morigin/setup[m[33m, [m[1;32msetup[m[33m)[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Tue Jun 8 19:01:47 2021 +0200
+
+    setup project
+
+[33mcommit 9e02534b11e78b9339680c9cb0464e167d02402b[m
+Author: astropaula <wojciechowska.fran@gmail.com>
+Date:   Tue Jun 8 17:33:07 2021 +0200
+
+    Initialize project using Create React App
