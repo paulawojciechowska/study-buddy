@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useStudents } from 'hooks/useStudents';
+import React, { useState } from 'react';
 import { useModal } from 'hooks/useModal';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
@@ -11,15 +10,13 @@ import { useGetGroupsQuery } from 'store';
 import { TitleWrapper } from 'components/templates/NewsSection/NewsSection.styles';
 
 const Dashboard = () => {
-  const [currentUser, setCurrentUser] = useState([]);
+  const [currentUserId, setCurrentUserId] = useState([]);
   const { id } = useParams();
-  const { getStudentById } = useStudents();
   const { isOpen, handleOpenModal, handleCloseModal } = useModal();
   const { data, isLoading } = useGetGroupsQuery();
 
-  const handleOpenStudentDetail = async (id) => {
-    const student = await getStudentById(id);
-    setCurrentUser(student);
+  const handleOpenStudentDetail = (id) => {
+    setCurrentUserId(id);
     handleOpenModal();
   };
 
@@ -49,7 +46,7 @@ const Dashboard = () => {
       <ViewWrapper>
         <UsersList handleOpenStudentDetail={handleOpenStudentDetail} />
         <Modal isOpen={isOpen} handleCloseModal={handleCloseModal}>
-          <StudentsDetails student={currentUser} />
+          <StudentsDetails student={currentUserId} />
         </Modal>
       </ViewWrapper>
     </DashboardWrapper>

@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useStudents } from 'hooks/useStudents';
+import React from 'react';
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList } from './UsersList.styles';
-// import { Title } from 'components/atoms/Title/Title';
+import { useGetStudentsByGroupQuery } from 'store';
+import { Title } from 'components/atoms/Title/Title';
 import { UserShape } from 'types';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 const UsersList = ({ handleOpenStudentDetail }) => {
-  const [students, setStudents] = useState([]);
   const { id } = useParams();
-  const { getStudentsByGroup } = useStudents();
+  const { data, isLoading } = useGetStudentsByGroupQuery(id);
 
-  useEffect(() => {
-    (async () => {
-      const students = await getStudentsByGroup(id);
-      setStudents(students);
-    })();
-  }, [getStudentsByGroup, id]);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <>
-      {/* <Title>Students List</Title> */}
+      <Title>Students List</Title>
       <StyledList>
-        {students.map((userData) => (
+        {data.students.map((userData) => (
           <UsersListItem onClick={() => handleOpenStudentDetail(userData.id)} key={userData.name} userData={userData} />
         ))}
       </StyledList>
